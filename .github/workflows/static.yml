@@ -1,0 +1,552 @@
+
+<html>
+<head id="header"><meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<style>
+*{font-family:'Microsoft YaHei';padding:0}
+html {font-size: 100%;overflow-x: hidden;overflow-y:scroll;-webkit-tap-highlight-color: transparent;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;height: 100%;}
+body{font-size:1em;background-color:#eee;margin:0}
+tr {  border: 1px solid #E8E8E8;}
+td{padding:0.2em 0;color: #666;border-bottom: 1px solid #E8E8E8; height:51px;}
+td.w5{color:#000; text-align:left;padding-left: 20px; }
+.tdright {width: 182px;text-align: right;padding-right: 20px; }
+.info div{font-size:1em;line-height:2em;clear:both;}
+.info{ margin-top:20px; background: #FFFFFF;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);border-radius: 5px; width:90%; margin-left: 5%;}
+.company{line-height:2em;border-bottom:2px solid #ccc;font-size:1em;background:#0B95F6;padding-top:0.5em;}
+.company strong{font-size:1.2em;}
+.green{color:#090;}
+.red{color:#c00;}
+.tip{ margin-top:5px; font-family: PingFangSC-Regular;font-size: 13px;color: rgba(0,0,0,0.60);letter-spacing: 0;text-align: center;}
+.result{font-family: PingFangSC-Medium;font-size: 20px;letter-spacing: 0;text-align: center; margin-top: 50px;}
+.danweiname { margin-top:15px; margin-left: 20px;font-family: PingFangSC-Medium;font-size: 18px;color: #FFFFFF;letter-spacing: 0; }
+.wire { background: #FFFFFF; margin-top:20px; margin-left:  20px; width: 90%; height: 1px;}
+.span1 {  margin-left:  20px;font-family: PingFangSC-Regular;font-size: 16px;color: #FFFFFF;letter-spacing: 0;}
+.span2 { font-family: PingFangSC-Regular;font-size: 12px;color: rgba(255,255,255,0.80);letter-spacing: 0;}
+.div {margin-top:8px; margin-bottom:20px;}
+
+/***打开导航的样式***/
+.map_title 
+{
+    border:1px solid #E8E8E8; background-color:white; z-index:20000; width:100%; display:none; margin: 0 auto; height:200px; position:fixed;
+}
+.map_title > div > {
+    width:98%; margin:0 auto; height:100%; text-align:center;
+}
+.map_title>div>span {
+    float:left; width:100%;
+    padding:22px 0px; 
+    text-align:center;
+    border-top:1px solid #E8E8E8;
+    }
+.npage_error{
+    z-index:20000;color: #a94442; bottom:10px;  width:100%;  margin: 0 auto; position:fixed;
+}
+.npage_error>div{
+    width:90%;border:1px solid #ebccd1;border-radius: 4px; padding:20px 0px;background-color: #f2dede; margin:0 auto;  text-align:center
+
+}
+</style>
+<script type="text/javascript" src="https://gjbpublic.yungujia.com/js/JsData/codelist.js?3.1.4_240815152954508"></script><script type="text/javascript" src="https://gjbpublic.yungujia.com/js/jquery-1.7.1.min.js"></script><script type="text/javascript" src="https://gjbpublic.yungujia.com/js/json2.js"></script><script type="text/javascript" src="https://gjbpublic.yungujia.com/js/init.js?3.1.4_240815152954508"></script><script type="text/javascript" src="https://gjbpublic.yungujia.com/js/initPageOffice.js?3.1.4_240815152954508"></script><script type="text/javascript" src="https://gjbpublic.yungujia.com/js/nodejsMsg/nodeMsgHelp.js?3.1.4_240815152954508"></script><script type="text/javascript">CAS = $.extend({},CAS,{Domain:'yungujia.com',RootUrlFull:'https://gjb.yungujia.com/',RootUrl:'/',StaticUrl:'https://gjbpublic.yungujia.com/',APIUrl:'/api/',StaticVersion:'3.1.4_240815152954508',Style:'default', DataCenterService: '', OssFilePath: 'https://files.yungujia.com/', OssImgPath: 'https://img.yungujia.com/',IsOpenTableFunction:'0',EnableOCR:false,EnableConnVQ:false,PageOfficeVersion:'5.0.0.1',NodeServer:'nodegjb.yungujia.com:8082/',IsBaoShu:false,BaoShuProductName:'V估价评估端',BaoShuProductShortName:'V估价',NowProductLogoPrefix:'',NowProductName:'估价宝',NowProductShortName:'估价宝',NowVQShortDesc:'业务平台',pageintimax:false});PGOF = $.extend({},PGOF,{PageOfficeVersion:'5.0.0.1'});CAS.Define = $.extend({},CAS.Define,{companyid:0,userid:0,username:'',truename:'',departmentname:'',mobilephone:'',systypecode:1003018,headphoto:'',backupcount:0,chargecount:0,accountstatus:0,companycode:'',adminid:'0',producttyperights:null,email:'',jiaose:'',hiddenfunction:'',ASPNET_SessionId:'xgg1f340gprcoaw21ewm5zra',departmentId:'',IsEnableCustomLoginPage:false});if (!top.dialog) {CAS.Include(['jquery.dialog.js']);} CAS.Include(['Sensors/sensorsdatabas.js','Sensors/publicsensorspoint.js']); var gjbProModuleRightNumber={P_Other_FormSetObjectOffice:'O_FormSetObjectOffice',P_Other_FormSetObjectFactory:'O_FormSetObjectFactory',P_Other_FormSetObjectFactoryLand:'O_FormSetObjectFactoryLand',P_Other_FormSetObjectOther:'O_FormSetObjectOther',P_Other_FormSetObjectBusiness:'O_FormSetObjectBusiness',P_Other_FormSetObjectBusinessLand:'O_FormSetObjectBusinessLand',P_Other_FormSetObjectCommercialResidential:'O_FormSetObjectCommercialResidential',P_Other_FormSetObjectEquipment:'O_FormSetObjectEquipment',P_Other_FormSetObjectLand:'O_FormSetObjectLand',P_Other_FormSetObjectConstructionOnProgress:'O_FormSetObjectConstructionOnProgress',P_Other_FormSetObjectHouseLand:'O_FormSetObjectHouseLand',P_Other_FormSetObjectProperty:'O_FormSetObjectProperty',};</script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=ZCJBZ-O4IK2-JVIUJ-CBTYD-36SB3-4MFXE"></script>
+<script type="text/javascript">
+    
+    var companyId=171;
+    var tencentMapKey = "ZCJBZ-O4IK2-JVIUJ-CBTYD-36SB3-4MFXE";
+    var clientAddressBtfsId =0;
+    var staticUrl = "https://gjbpublic.yungujia.com/";
+    var cityName = "";
+    var provinceName = "";
+    var wxId = "gh_3bef18cfd98d";
+    var isWXClient = false;/**是否为微信中打开**/
+    var isMobile = false;/**是否在移动端**/
+    var osType = "windows";/**当前系统类型**/
+    var wxHost = "http://wx.yungujia.com";/***微信域名**/
+    var qrFieldDot =4;/*万元小数位*/
+    var qrMapBtfsId =300068;//业物业位置图字段的btfsId值
+    var objectMapDicJson =[];//物业位置图集合
+    var debugtest = "2018005-12540-10";
+    var nowGuid = "0351EF7D-2105-4043-910E-70DDE6CA5ECE";
+    var nowCompanyCode = "szgz";
+    //wxId = "gh_07547d1443ff";
+    //wxHost = "https://wx.fxtchina.com";
+    if (/android|webos|iphone|ipod|blackberry|ios|ipad/i.test(navigator.userAgent.toLowerCase())) 
+    {
+        isMobile = true;
+        if (/android/i.test(navigator.userAgent.toLowerCase())) 
+        {
+            osType = "android";
+        }
+        else if(/|iphone|ipod|ipad|ios/i.test(navigator.userAgent.toLowerCase()))
+        {
+            osType = "ios";
+        }
+    }
+    if(navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1)
+    {
+        isWXClient = true;
+    }
+    //window.onload = function () {
+    //    var doc = document.getElementsByTagName("span");
+    //    for (var i = 0; i < doc.length; i++) {
+    //    //增加判断，如果没有数据则显示为空，单位也不显示
+    //        if (doc[i].getAttribute("flag") == "number") {
+    //            if (doc[i].innerHTML != "" || isNaN(doc[i].innerHTML)) {
+    //                doc[i].innerHTML = formatCurrency(doc[i].innerHTML);
+    //            } else {
+    //                doc[i].innerHTML = "";
+    //            }
+    //        }
+    //        if (doc[i].getAttribute("name") == "wanyuan") 
+    //        {
+    //            var wanyuanDot=4;
+    //            /*北京申洋要求为2位数*/
+    //            if(companyId==1556)
+    //            {
+    //                wanyuanDot=2;
+    //            }
+    //            //修改显示，以元为单位，根据需求显示万元 
+    //            if (doc[i].getAttribute("num") != "" || isNaN(doc[i].getAttribute("num"))) {
+    //                doc[i].innerHTML = "(" + formatCurrency((parseFloat(doc[i].getAttribute("num")) / 10000).toFixed(wanyuanDot)) + "万元)";
+    //            } else {
+    //                doc[i].innerHTML = "";
+    //            }
+    //        }
+    //    }
+    //};
+    $(function () { 
+        initAddressNavigation();
+        BindWanyuan();
+        $("#MapTitle2").click(function () {
+            showMapTitle(false);
+        });
+        /**点击导航地图选项**/
+        $("#MapTitle").find(".opMapTypeTile").click(function () {    
+            var qqMap = "https://apis.map.qq.com/uri/v1/marker?marker=coord:{lat},{lng};title:{mapName};addr:{mapAddress}&referer=myapp";
+            var gaodeMap = "https://uri.amap.com/marker?position={lng},{lat}&name={mapAddress}";
+            var baiduMap = "http://api.map.baidu.com/marker?location={lat},{lng}&title={mapName}&content={mapAddress}&coord_type=gcj02&output=html";
+            //if(osType=="android")//暂时不用直接换起功能 ios里换起有问题
+            //{
+            //    gaodeMap = "androidamap://navi?sourceApplication=估价宝&poiname={mapAddress}&lat={lat}&lon={lng}&dev=0&style=2";
+            //}
+            var mapUrlInfo = 
+            {
+                "qqMap":qqMap,
+                "gaodeMap": gaodeMap,// "androidamap://navi?sourceApplication=估价宝&poiname=fangheng&lat={lat}&lon={lng}&dev=0&style=2",//"https://uri.amap.com/marker?position={lng},{lat}&name={mapAddress}",
+                "baiduMap":baiduMap// "http://api.map.baidu.com/marker?location={lat},{lng}&title={mapName}&content={mapAddress}&coord_type=gcj02&output=html"
+            };              
+            var opNowMapUrl = mapUrlInfo[$(this).attr("data-mapUrlKey")];
+            var lat = $("#openMap").attr("data-lat");
+            var lng = $("#openMap").attr("data-lng");
+            var mapName =$("#openMap").attr("data-name");
+            var mapAddress = $("#openMap").attr("data-address");
+            opNowMapUrl = opNowMapUrl.replace("{lat}", lat).replace("{lng}", lng).replace("{mapName}", encodeURIComponent(mapName)).replace("{mapAddress}", mapAddress);                          
+            window.location.href = opNowMapUrl;
+        });
+        //加载物业位置图
+        LoadObjectMap();
+        //20231116  中证集团要求修改特定报告扫码后的机构信息显示
+        if(nowGuid.toLowerCase()=="c738031b-bf79-4931-b25a-5cf0aed28dbe"&&nowCompanyCode.toLowerCase()=="zzjt")
+        {
+            $(".danweiname").html("南京中证船舶技术服务事务所（有限合伙）");
+            $.each($("#repInfo").find(".fieldItem"),function ( _i,_item) { 
+                var nowHtml = $(_item);      
+                if(nowHtml.find(".tdname").html()=="估价机构")
+                {
+                    nowHtml.find(".tdvalue").find("span").html("南京中证船舶技术服务事务所（有限合伙）");
+                }
+            });
+        }
+    });
+    /**
+     * 绑定万元显示处理
+     * */
+    function BindWanyuan()
+    {
+        
+        var doc = $("span");
+        $.each(doc,function ( _i,_item) { 
+            _item = $(_item);
+            //增加判断，如果没有数据则显示为空，单位也不显示
+            if (_item.attr("flag") == "number") {
+                if (_item.html() != "" || isNaN(_item.html())) {
+                    _item.html(formatCurrency(_item.html()));
+                } else {
+                    _item.html("");
+                }
+            }
+            if (_item.attr("name") == "wanyuan")
+            {
+                //var wanyuanDot=qrFieldDot;
+                /*北京申洋要求为2位数*/
+                //if(companyId==1556)
+                //{
+                //    wanyuanDot=2;
+                //}
+                //修改显示，以元为单位，根据需求显示万元 
+                if (_item.attr("wanyuan") != "" || isNaN(_item.attr("wanyuan"))) {
+                    _item.html("(" + formatCurrency(_item.attr("wanyuan")) + "万元)");
+                } else {
+                    _item.html("");
+                }
+            }        
+        
+        });
+    }
+    /**
+     * 显示加载导航选项
+     * @param _isShow true:显示地图选项 
+     */
+    function showMapTitle(_isShow)
+    {
+        if(_isShow)
+        {
+            $("#MapTitle").show();
+            $("#MapTitle2").show();
+            var tHeight = $("#MapTitle").height();
+            var titleTop = $(window).height();
+            $("#MapTitle").css("bottom", (0-tHeight) + "px");
+            $("#MapTitle").animate({bottom: "0px"}, 100);
+            $("#MapTitle2").css("height", ($(window).height()+100) + "px");
+        }
+        else
+        {
+            $("#MapTitle").hide();
+            $("#MapTitle2").hide();
+        }
+    }
+    /*
+    格式化数据，小数部分不做处理，对整数部分进行千分位格式化的处理，如果有符号，正常保留
+    */
+    function formatCurrency(num) {
+        if (num) {
+            //将num中的$,去掉，将num变成一个纯粹的数据格式字符串
+            num = num.toString().replace(/\$|\,/g, '');
+            //如果num不是数字，则将num置0，并返回
+            if ("" == num || isNaN(num)) {return num; }
+            //如果num是负数，则获取她的符号
+            var sign = num.indexOf("-") > -1 ? '-' : '';
+            //如果num是负数，则截取掉她的符号
+            num = num.replace("-", "");
+            //如果存在小数点，则获取数字的小数部分
+            var cents = num.indexOf(".") > 0 ? num.substr(num.indexOf(".")) : '';
+            cents = cents.length > 1 ? cents : ''; //注意：这里如果是使用change方法不断的调用，小数是输入不了的
+            //获取数字的整数数部分
+            num = num.indexOf(".") > 0 ? num.substring(0, (num.indexOf("."))) : num;
+            //如果没有小数点，整数部分不能以0开头
+            if ('' == cents) { if (num.length > 1 && '0' == num.substr(0, 1)) { return 'Not a Number ! '; } }
+            //如果有小数点，且整数的部分的长度大于1，则整数部分不能以0开头
+            else { if (num.length > 1 && '0' == num.substr(0, 1)) { return 'Not a Number ! '; } }
+            //针对整数部分进行格式化处理，这是此方法的核心，也是稍难理解的一个地方，逆向的来思考或者采用简单的事例来实现就容易多了
+            /*
+            也可以这样想象，现在有一串数字字符串在你面前，如果让你给他家千分位的逗号的话，你是怎么来思考和操作的?
+            字符串长度为0/1/2/3时都不用添加
+            字符串长度大于3的时候，从右往左数，有三位字符就加一个逗号，然后继续往前数，直到不到往前数少于三位字符为止
+            */
+            for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+                num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+            }
+            //将数据（符号、整数部分、小数部分）整体组合返回
+            return (sign + num + cents);
+        }
+
+    }
+    /**初始化导航***/
+    function initAddressNavigation()
+    {
+        if($("#repInfo").find(".field_"+clientAddressBtfsId).length<1||clientAddressBtfsId<1)
+        {
+            return;
+        }
+        var clientAddressHtml = $("#repInfo").find(".field_" + clientAddressBtfsId);
+        var addressVal = clientAddressHtml.find(".fieldValue").html();
+        if(addressVal==""||addressVal==null)
+        {
+            return;
+        }
+        /**加载导航图标after**/
+        var tdRight = clientAddressHtml.find(".tdvalue");
+        clientAddressHtml.find(".fieldValue").append("<a href='javascript:;' "
+            +"data-address='' data-name='' data-lat='' data-lng='' data-result='0' style='float:right;margin-top:-5px;' id='openMap'>"
+            +"<img src=\"" + staticUrl + "images/navigation.png\" style='width:20px;height:21px;' /></a>");        
+        $("#openMap").hide();
+        /**点击各类型地图导航**/
+        $("#openMap").click(function () { 
+            if($(this).attr("data-result")!="1")
+            {
+                alertError("没有检索到该地址，请使用APP地图工具导航！");
+                return;
+            }
+            var lat = $(this).attr("data-lat");
+            var lng = $(this).attr("data-lng");
+            var mapName = $(this).attr("data-name");
+            var mapAddress = $(this).attr("data-address");
+            var openMapUrl = "";
+            if(isMobile)/**手机端**/
+            {
+                if(isWXClient&&wxId!=null&&wxId!="")/*微信客户端,并且机构对接的微评估*/
+                {                    
+                    openMapUrl = wxHost + "/page/navigationMap.aspx?wx={wxId}&lat={lat}&lng={lng}&mapName={mapName}&mapAddress={mapAddress}";//&time="+new Date().getTime();/**不加时间戳的话，跳到打开地图页后再跳转回来时微信Android端会因为缓存问题导致偶发性返回js的href失效**/
+                }
+                else
+                {
+                    showMapTitle(true);
+                    return;
+                }
+            }
+            else/**pc端**/
+            {
+                if(!isWXClient)/*非微信客户端*/
+                {
+                    showMapTitle(true);
+                    return;
+                }
+                else
+                {
+                    showMapTitle(true);
+                    return;
+                }
+            }
+            openMapUrl = openMapUrl.replace("{wxId}", wxId).replace("{lat}", lat).replace("{lng}", lng).replace("{mapName}", encodeURIComponent(mapName)).replace("{mapAddress}", mapAddress);              
+            window.location.href = openMapUrl;
+
+        });
+        var cityAddress = provinceName;
+        if(cityName!="")
+        {
+            cityAddress = cityName;
+        }
+        /****根据地址获取坐标*****/
+        var geocoder, map, marker = null;
+        geocoder = new qq.maps.Geocoder();
+        geocoder.getLocation(cityAddress + addressVal);//对指定地址进行解析        
+        //设置服务请求成功的回调函数
+        geocoder.setComplete(function(result) {
+            $("#openMap").show();
+            //alert(JSON.stringify(result));
+            var mapAddress = result.detail.address;
+            var latitude = result.detail.location.lat;/*纬度*/
+            var longitude = result.detail.location.lng;/*经度*/
+            $("#openMap").attr("data-lat",latitude);
+            $("#openMap").attr("data-lng",longitude);
+            $("#openMap").attr("data-name",addressVal);
+            $("#openMap").attr("data-address",mapAddress);
+            $("#openMap").attr("data-result","1");
+        });
+        //若服务请求失败，则运行以下函数
+        geocoder.setError(function(_d) {
+            //alert(JSON.stringify(_d));
+            $("#openMap").show();
+            $("#openMap").attr("data-result","0");
+          //alert("出错了，请输入正确的地址！！！");
+        });
+            
+        
+    }
+    var alertErrorTime = null;
+    /**
+     * 弹出错误提示
+     * @param _txt 提示文字
+     */
+    function alertError(_txt)
+    {
+        $("#pageAlert").remove();
+        if(alertErrorTime!=null)
+        {
+            window.clearTimeout(alertErrorTime);
+        }
+        $("body").append("<div id='pageAlert' class='npage_error'><div>" + _txt + "</div></div>");        
+        $("#pageAlert").hide();
+        $("#pageAlert").fadeIn(200,function(){
+            alertErrorTime=setTimeout(function () {
+                $("#pageAlert").remove();
+            }, 3000);
+        });
+        
+    }
+    //加载物业位置图
+    var mapDialog = null;
+    function LoadObjectMap()
+    {
+        if($("#repInfo").find(".field_"+qrMapBtfsId).length<1||qrMapBtfsId<1)
+        {
+            return;
+        }
+       //objectMapDicJson[1].value = "";
+        //objectMapDicJson[2].value = "";
+        //排序，将有图的排在最前面
+        objectMapDicJson.sort(function (a,b) {
+            if(a.value!=null&&a.value!=""&&(b.value==null||b.value==""))
+            {
+                return -1;
+            }
+            else if(b.value!=null&&b.value!=""&&(a.value==null||a.value==""))
+            {
+                return 1;
+            }
+            return 0;
+        });
+        CAS.TemplateDataBind(".objectMapItemTemplate", objectMapDicJson, "bind",
+                                        function (_name, _val, _obj) {
+                                            if(_name=="key")
+                                            {
+                                                return decodeURIComponent(_val.split("$")[1]);
+                                            }
+                                            return _val;
+                                        },
+                                        function(_obj,_html)
+                                        {
+                                            var objMapUrl = _obj.value;
+                                            if(objMapUrl==""||objMapUrl==null)
+                                            {
+                                                _html.find(".objImg").html("<font style='color:red'>[没有物业位置图]</font>");
+                                            }
+                                            return true;
+                                        }, null);
+        $("#repInfo").find(".field_" + qrMapBtfsId).find("td").css("padding-left","0px");
+        $("#repInfo").find(".objImg").click(function () {
+            var nowImgUrl = $(this).find("img").attr("src");
+            var t_html = "<div style='float:left;width:100%; height:100%; overflow-y:auto' class='maxMapImg'><img  src='" + nowImgUrl + "'   style='width:100%;' onclick='mapDialog.close();' /></div>";
+            var mapImgObj = new Image();  
+            mapImgObj.onload = function () {
+                var imgW=mapImgObj.width+20;
+                var imgH=mapImgObj.height+10;
+                mapDialog=CAS.Dialog({
+                    width:imgW> $(window).width()?$(window).width():imgW,
+                    height:imgH> $(window).height()?$(window).height():imgH,
+                    title:false,
+                    content: t_html
+                });
+                //去掉弹出框的内边距和标题行
+                $(".ui_inner").find("table.ui_dialog").children("tbody").find("tr").eq(0).hide();
+                $(".ui_inner").find("table.ui_dialog").children("tbody").find("tr").eq(2).hide();
+                $(".ui_inner").find("table.ui_dialog").children("tbody").find("tr").find(".ui_content").css("cssText","padding-left:0px !important;padding-right:0px !important;");
+                $("table.ui_border").children("tbody").children("tr").eq(2).hide();
+            };
+            mapImgObj.src = nowImgUrl; 
+                
+        });
+        $("#ldg_lockmask").live("click", function () { 
+            if(mapDialog!=null)
+            {
+                mapDialog.close();
+            }
+        });
+  
+    }
+</script>
+<title>
+	估价宝
+</title></head>
+<body>
+<div class="company" style="">
+<div class="danweiname">深圳市国咨土地房地产资产评估有限公司</div>    
+    <div class="wire"></div>
+    <div class="" style=""> 
+        <span class="span1">报告真伪查询</span><span class="span2">（请认准我们的域名，谨防假冒网站）</span>      
+    </div>
+    <div style=" float:left;width:100%; height:35px; margin-top:-10px; background: #0B95F6">     
+        <a href="/check?code=szgz&t=1" target="_blank">
+            <img src="https://gjbpublic.yungujia.com/images/u98.png"  style="width:20px;height:20px; float:left; margin-left:20px; margin-top:5px;" >
+            <span class="span2" style=" float:left; " >
+                点击打开“ 云估价报告真伪查询平台” 
+            </span>
+        </a>
+    </div>
+
+</div>
+<div class="result">
+<font class='green'>您查询的报告真实有效</font>
+</div>
+
+<div class="tip">
+请确认以下信息与您收到的报告一致
+</div>
+<div class="info">
+<table align="center" id="repInfo">
+
+
+      
+          <tr class="field_3048 fieldItem">
+              <td class="w5 tdname">项目名称</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">尖岗山名苑B16栋03</span>&nbsp
+              </td>
+          </tr>
+      
+      
+          <tr class="field_3339 fieldItem">
+              <td class="w5 tdname">预评编号</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">深国咨预评第202211105号</span>&nbsp
+              </td>
+          </tr>
+      
+      
+          <tr class="field_3086 fieldItem">
+              <td class="w5 tdname">客户全称</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">中国邮政储蓄银行深圳分行</span>&nbsp
+              </td>
+          </tr>
+      
+      
+          <tr class="field_3432 fieldItem">
+              <td class="w5 tdname">评估目的</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">房地产抵押估价</span>&nbsp
+              </td>
+          </tr>
+      
+      
+          <tr class="field_3347 fieldItem">
+              <td class="w5 tdname">预评时间</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">2024-8-8</span>&nbsp
+              </td>
+          </tr>
+      
+      
+          <tr class="field_3345 fieldItem">
+              <td class="w5 tdname">评估总面积</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">245.05</span>&nbsp㎡
+              </td>
+          </tr>
+      
+               
+          <tr class="field_3346 fieldItem"><td class="w5 tdname">评估总值</td><td class="tdright tdvalue"><span flag="number" class="fieldValue">33816900.00</span>&nbsp元&nbsp<br><span num="33816900.00" wanyuan="3381.6900" name="wanyuan"></span></td></tr>
+ 
+      
+          <tr class="field_3781 fieldItem">
+              <td class="w5 tdname">总税费</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag="number"  class="fieldValue">3415506.00</span>&nbsp元
+              </td>
+          </tr>
+      
+               
+          <tr class="field_3782 fieldItem"><td class="w5 tdname">总净值</td><td class="tdright tdvalue"><span flag="number" class="fieldValue">30401393.00</span>&nbsp元&nbsp<br><span num="30401393.00" wanyuan="3040.1393" name="wanyuan"></span></td></tr>
+ 
+      
+          <tr class="field_3941 fieldItem">
+              <td class="w5 tdname">预评撰写人</td>
+              <td class="tdvalue"  style="width: 182px; text-align: right;padding-right: 20px;">
+                  <span flag=""  class="fieldValue">陈晓丹</span>&nbsp
+              </td>
+          </tr>
+      
+</table>
+</div>
+
+    <div style=" background-color:black;filter: alpha(opacity=60);   opacity: 0.6; width:100%; display:none; z-index:10000;bottom:0px; margin: 0 auto; height:100px;position:fixed;" id="MapTitle2">
+    </div>
+    <div class="map_title" id="MapTitle">
+        <div>
+            <span class="opMapTypeTile"  data-mapUrlKey="qqMap">腾讯地图</span>
+            <span class="opMapTypeTile"  data-mapUrlKey="baiduMap">百度地图</span>
+            <span class="opMapTypeTile"  data-mapUrlKey="gaodeMap">高德地图</span>
+        </div>
+    </div>
+    <style type="text/css">
+    </style>
+</body>
+</html>
